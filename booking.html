@@ -1,17 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | Home Comfort Cleaners LLC</title>
+  <link rel="stylesheet" href="booking-system.css" />
 </head>
 <body>
+  <header class="header">
+    <a href="index.html" class="logo-wrap">
+      <img src="logo.jpeg" alt="Home Comfort Cleaners LLC logo" />
+    </a>
 
-<h1>Book Cleaning</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-<form action="thank-you.html">
-<input placeholder="Name"><br><br>
-<input placeholder="Address"><br><br>
-<button>Book Now</button>
-</form>
+    <a class="nav-btn" href="booking.html">Book Now</a>
+  </header>
 
+  <main>
+    <section class="booking-hero">
+      <div>
+        <p class="eyebrow">Real Booking System</p>
+        <h1>Book Your Premium Cleaning</h1>
+        <p>
+          Choose your cleaning service, request your date, and secure your appointment through
+          Home Comfort Cleaners LLC.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn gold" id="squareTopButton" href="#" target="_blank" rel="noopener">Book Through Square</a>
+          <a class="btn outline" href="#request-form">Request Custom Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-grid">
+      <article class="booking-card featured">
+        <p class="eyebrow">Fastest Option</p>
+        <h2>Schedule Online</h2>
+        <p>
+          Use this button for direct booking through Square Appointments.
+          Replace the Square link in <strong>config.js</strong>.
+        </p>
+
+        <a class="btn gold full" id="squareMainButton" href="#" target="_blank" rel="noopener">
+          Open Booking Calendar
+        </a>
+
+        <div class="embed-box">
+          <h3>Square Embed Area</h3>
+          <p>
+            Paste your Square Website Embed code below this comment inside booking.html:
+          </p>
+
+          <!--
+            PASTE YOUR SQUARE APPOINTMENTS EMBED CODE HERE.
+
+            Square Dashboard:
+            Appointments → Online Booking → Channels → Add booking flow to existing site → Get embed code
+          -->
+
+          <div class="embed-placeholder">
+            Square booking widget goes here.
+          </div>
+        </div>
+      </article>
+
+      <article class="booking-card">
+        <p class="eyebrow">Services</p>
+        <h2>Choose Your Cleaning</h2>
+
+        <div class="service-list">
+          <div>
+            <strong>Airbnb Turnover Cleaning</strong>
+            <span>Guest-ready reset for short-term rentals.</span>
+          </div>
+          <div>
+            <strong>Deep Cleaning</strong>
+            <span>Detailed top-to-bottom service.</span>
+          </div>
+          <div>
+            <strong>Move-In / Move-Out Cleaning</strong>
+            <span>Perfect reset for property transitions.</span>
+          </div>
+          <div>
+            <strong>Recurring Cleaning</strong>
+            <span>Weekly, bi-weekly, or monthly maintenance.</span>
+          </div>
+        </div>
+
+        <p class="no-laundry">No laundry services offered.</p>
+      </article>
+    </section>
+
+    <section id="request-form" class="request-section">
+      <div class="section-intro">
+        <p class="eyebrow">Custom Quote</p>
+        <h2>Need Pricing First?</h2>
+        <p>
+          Send the property details and we’ll respond with availability and a quote.
+        </p>
+      </div>
+
+      <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="address" placeholder="Property Address" required />
+
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option>Airbnb Turnover Cleaning</option>
+          <option>Deep Cleaning</option>
+          <option>Move-In / Move-Out Cleaning</option>
+          <option>Recurring Cleaning</option>
+        </select>
+
+        <input type="date" name="preferred_date" required />
+
+        <select name="property_size" required>
+          <option value="">Property Size</option>
+          <option>Studio / 1 Bedroom</option>
+          <option>2 Bedrooms</option>
+          <option>3 Bedrooms</option>
+          <option>4+ Bedrooms</option>
+          <option>Commercial / Property Manager</option>
+        </select>
+
+        <textarea name="message" placeholder="Bedrooms, bathrooms, square footage, gate code, parking notes, or special instructions"></textarea>
+
+        <button class="btn gold" type="submit">Send Booking Request</button>
+      </form>
+
+      <p class="form-note">
+        To make this form live, replace <strong>YOUR_FORM_ID</strong> with your Formspree form ID,
+        or connect it to Netlify Forms / Jotform / Google Forms.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="logo.jpeg" alt="Home Comfort Cleaners LLC logo" />
+    <div>
+      <h2>Home Comfort Cleaners LLC</h2>
+      <p>Premium Airbnb & Residential Cleaning</p>
+    </div>
+    <div>
+      <p id="footerPhone">(555) 123-4567</p>
+      <p id="footerEmail">info@homecomfortcleaners.com</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="booking-system.js"></script>
 </body>
 </html>
