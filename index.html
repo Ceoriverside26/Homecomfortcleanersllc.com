@@ -857,7 +857,12 @@
 
     <section id="booking" class="page">
       <div class="page-hero"><div class="container"><div class="section-kicker">Book Online</div><h1 class="section-title">Schedule Your Cleaning</h1><p>Replace the demo link below with your real Squarespace Scheduling / Acuity booking link.</p></div></div>
-      <section class="booking"><div class="container booking-grid"><div><h2 class="section-title">Book Through Squarespace</h2><p class="booking-note">To connect your live booking page, find this line in the code:</p><p class="booking-note"><strong>const SQUARESPACE_BOOKING_URL = "https://example.as.me/schedule.php";</strong></p><p class="booking-note">Replace it with your real Squarespace Scheduling or Acuity Scheduling URL.</p><br /><a id="externalBookingLink" class="btn btn-primary" href="https://example.as.me/schedule.php" target="_blank" rel="noopener">Open Booking Page</a></div><div class="booking-card"><iframe id="bookingFrame" src="https://example.as.me/schedule.php" title="Online booking"></iframe></div></div></section>
+      <section class="booking"><div class="container booking-grid"><div><h2 class="section-title">Book Through Squarespace</h2><p class="booking-note">To connect your live booking page, find this line in the code:</p><p class="booking-note"><strong>const SQUARESPACE_BOOKING_URL = "https://example.as.me/schedule.php";</strong></p><p class="booking-note">Replace it with your real Squarespace Scheduling or Acuity Scheduling URL.</p><br /> 
+        <a class="btn btn-primary" 
+   href="https://squareup.com/appointments/buyer/widget/YOUR-SQUARE-ID" 
+   target="_blank">
+   Book Now
+</a></div><div class="booking-card"><iframe id="bookingFrame" src="https://example.as.me/schedule.php" title="Online booking"></iframe></div></div></section>
     </section>
 
     <section id="contact" class="page">
@@ -877,7 +882,7 @@
 
   <script>
     // Replace this with your real Squarespace Scheduling / Acuity URL.
-    const SQUARESPACE_BOOKING_URL = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
+    const YOUR-SQUARE-ID = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
 
     const pages = document.querySelectorAll(".page");
     const pageLinks = document.querySelectorAll("[data-page-link]");
@@ -886,8 +891,7 @@
     const bookingFrame = document.getElementById("bookingFrame");
     const externalBookingLink = document.getElementById("externalBookingLink");
 
-    if (bookingFrame) bookingFrame.src = SQUARESPACE_BOOKING_URL;
-    if (externalBookingLink) externalBookingLink.href = SQUARESPACE_BOOKING_URL;
+    
 
     function showPage(pageId) {
       pages.forEach((page) => page.classList.remove("active-page"));
