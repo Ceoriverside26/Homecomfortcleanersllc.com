@@ -843,7 +843,7 @@
   </footer>
 
   <script>
-    // IMPORTANT: Replace this with your real Square Appointments booking link.
+    // Square Appointments booking link
     const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
 
     const pages = document.querySelectorAll(".page");
@@ -857,36 +857,48 @@
     if (squareBookingFrame) squareBookingFrame.src = SQUARE_BOOKING_URL;
 
     function showPage(pageId) {
-      pages.forEach((page) => page.classList.remove("active-page"));
-      const target = document.getElementById(pageId) || document.getElementById("home");
-      target.classList.add("active-page");
+      const cleanPageId = pageId.replace("#", "") || "home";
+      const targetPage = document.getElementById(cleanPageId) || document.getElementById("home");
 
-      pageLinks.forEach((link) => {
-        link.classList.toggle("active", link.dataset.pageLink === pageId);
+      pages.forEach((page) => {
+        page.classList.remove("active-page");
       });
 
-      menu.classList.remove("show");
+      targetPage.classList.add("active-page");
+
+      pageLinks.forEach((link) => {
+        link.classList.toggle("active", link.dataset.pageLink === cleanPageId);
+      });
+
+      if (menu) menu.classList.remove("show");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    pageLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const pageId = link.dataset.pageLink;
-        history.pushState(null, "", `#${pageId}`);
-        showPage(pageId);
+    // Makes every navbar, hero, footer, and CTA button with data-page-link switch pages.
+    document.addEventListener("click", function (event) {
+      const link = event.target.closest("[data-page-link]");
+
+      if (!link) return;
+
+      event.preventDefault();
+      const pageId = link.dataset.pageLink;
+      history.pushState(null, "", "#" + pageId);
+      showPage(pageId);
+    });
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        if (menu) menu.classList.toggle("show");
       });
+    }
+
+    window.addEventListener("popstate", function () {
+      showPage(location.hash || "#home");
     });
 
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("show");
+    document.addEventListener("DOMContentLoaded", function () {
+      showPage(location.hash || "#home");
     });
-
-    window.addEventListener("popstate", () => {
-      showPage(location.hash.replace("#", "") || "home");
-    });
-
-    showPage(location.hash.replace("#", "") || "home");
   </script>
 </body>
 </html>
