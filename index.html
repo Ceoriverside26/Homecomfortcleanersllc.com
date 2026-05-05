@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Comfort Cleaners LLC</title>
   <meta name="description" content="Premium cleaning services for homeowners and Airbnb hosts." />
+
   <style>
     :root {
       --navy: #061523;
@@ -13,7 +14,6 @@
       --gold-light: #efc76b;
       --cream: #f7f0e5;
       --white: #ffffff;
-      --muted: #c9c3b7;
       --text: #1c1c1c;
       --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
       --radius: 16px;
@@ -105,7 +105,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Header */
     .header {
       position: sticky;
       top: 0;
@@ -126,42 +125,23 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      color: var(--white);
-      font-weight: 700;
     }
 
-    .logo-mark {
-      width: 66px;
-      height: 66px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold) 45%, #533505 75%);
-      border: 2px solid var(--gold-light);
-      display: grid;
-      place-items: center;
-      color: var(--navy);
-      font-size: 1.8rem;
-      box-shadow: 0 0 0 4px rgba(214, 161, 61, 0.12);
-    }
-
-    .logo-text span {
-      display: block;
-      color: var(--gold);
-      font-family: Arial, sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-top: -0.2rem;
+    .logo-img {
+      height: 78px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.45));
     }
 
     .menu {
       display: flex;
       align-items: center;
-      gap: 1.8rem;
+      gap: 1.5rem;
       list-style: none;
       color: var(--white);
       font-family: Arial, sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
     }
@@ -196,7 +176,6 @@
       cursor: pointer;
     }
 
-    /* Hero */
     .hero {
       position: relative;
       min-height: 690px;
@@ -266,7 +245,6 @@
       font-size: 1.1rem;
     }
 
-    /* About */
     .about {
       background: var(--navy);
       color: var(--white);
@@ -318,7 +296,6 @@
       font-size: 1.25rem;
     }
 
-    /* Services */
     .services {
       padding: 4.8rem 0;
       text-align: center;
@@ -388,7 +365,6 @@
       font-size: 0.9rem;
     }
 
-    /* Gallery */
     .gallery {
       background: var(--navy);
       color: var(--white);
@@ -450,7 +426,6 @@
       font-weight: 900;
     }
 
-    /* Reviews */
     .reviews {
       padding: 4.5rem 0;
       text-align: center;
@@ -490,7 +465,6 @@
       font-size: 0.9rem;
     }
 
-    /* Booking */
     .booking {
       background: var(--navy-2);
       color: var(--white);
@@ -514,7 +488,7 @@
 
     .booking-card iframe {
       width: 100%;
-      min-height: 620px;
+      min-height: 700px;
       border: 0;
       border-radius: 12px;
       background: var(--white);
@@ -544,7 +518,6 @@
       margin-right: 0.5rem;
     }
 
-    /* Contact */
     .contact {
       background: var(--navy);
       color: var(--white);
@@ -560,11 +533,10 @@
       padding-bottom: 2rem;
     }
 
-    .footer-logo {
-      text-align: center;
-      color: var(--gold);
-      font-size: 1.1rem;
-      font-weight: 700;
+    .footer-logo-img {
+      width: 150px;
+      margin: 0 auto;
+      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.45));
     }
 
     .footer-info {
@@ -584,7 +556,6 @@
       padding-top: 1rem;
     }
 
-    /* Standalone page sections */
     .page-hero {
       background: linear-gradient(135deg, var(--navy), var(--navy-2));
       color: var(--white);
@@ -682,8 +653,7 @@
         top: 78px;
       }
 
-      .logo-mark {
-        width: 54px;
+      .logo-img {
         height: 54px;
       }
 
@@ -705,13 +675,14 @@
     }
   </style>
 </head>
+
 <body>
   <header class="header">
     <div class="container nav">
-     <a href="#home" class="logo" data-page-link="home">
-  <img src="images/logo.png" alt="Home Comfort Cleaners Logo" class="logo-img">
-</a>
-      
+      <a href="#home" class="logo" data-page-link="home">
+        <img src="images/logo.png" alt="Home Comfort Cleaners LLC Logo" class="logo-img" />
+      </a>
+
       <button class="mobile-toggle" aria-label="Open menu">☰</button>
 
       <ul class="menu" id="menu">
@@ -748,7 +719,7 @@
         </div>
       </section>
 
-      <section class="about" id="home-about-preview">
+      <section class="about">
         <div class="container about-grid">
           <img class="about-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Clean luxury kitchen" />
           <div>
@@ -852,42 +823,38 @@
     </section>
 
     <section id="booking" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Book Online</div><h1 class="section-title">Schedule Your Cleaning</h1><p>Replace the demo link below with your real Squarespace Scheduling / Acuity booking link.</p></div></div>
-      <section class="booking"><div class="container booking-grid"><div><h2 class="section-title">Book Through Squarespace</h2><p class="booking-note">To connect your live booking page, find this line in the code:</p><p class="booking-note"><strong>const SQUARESPACE_BOOKING_URL = "https://example.as.me/schedule.php";</strong></p><p class="booking-note">Replace it with your real Squarespace Scheduling or Acuity Scheduling URL.</p><br /> 
-        <a class="btn btn-primary" 
-   href="https://squareup.com/appointments/buyer/widget/YOUR-SQUARE-ID" 
-   target="_blank">
-   Book Now
-</a></div><div class="booking-card"><iframe id="bookingFrame" src="https://example.as.me/schedule.php" title="Online booking"></iframe></div></div></section>
+      <div class="page-hero"><div class="container"><div class="section-kicker">Book Online</div><h1 class="section-title">Schedule Your Cleaning</h1><p>Book your cleaning instantly using our Square booking system.</p></div></div>
+      <section class="booking"><div class="container booking-grid"><div><h2 class="section-title">Book Your Appointment</h2><p class="booking-note">Click below or use the scheduler to book your cleaning through Square.</p><p class="booking-note"><strong>Before publishing:</strong> replace the Square placeholder link in the script with your real Square Appointments link.</p><br /><a id="squareBookingButton" class="btn btn-primary" href="https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start" target="_blank" rel="noopener">Book Now</a></div><div class="booking-card"><iframe id="squareBookingFrame" src="https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start" title="Square online booking"></iframe></div></div></section>
     </section>
 
     <section id="contact" class="page">
       <div class="page-hero"><div class="container"><div class="section-kicker">Contact</div><h1 class="section-title">Get a Quote</h1></div></div>
-      <div class="content-section"><div class="container two-column"><div><h2 class="section-title">Let’s Make Your Space Shine</h2><ul class="contact-list" style="color:#1c1c1c"><li><span>Phone:</span> (904) 516-5401</li><li><span>Email:</span> info@homecomfortcleaners.com</li><li><span>Location:</span> Your City, State</li></ul></div><form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"><input name="name" placeholder="Your Name" required /><input name="email" type="email" placeholder="Your Email" required /><input name="phone" placeholder="Phone Number" /><select name="service"><option>Airbnb Turnover Cleaning</option><option>Deep Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Recurring Cleaning</option></select><textarea name="message" placeholder="Tell us what you need"></textarea><button class="btn btn-primary" type="submit">Send Request</button></form></div></div>
+      <div class="content-section"><div class="container two-column"><div><h2 class="section-title">Let’s Make Your Space Shine</h2><ul class="contact-list" style="color:#1c1c1c"><li><span>Phone:</span> (555) 123-4567</li><li><span>Email:</span> info@homecomfortcleaners.com</li><li><span>Location:</span> Your City, State</li></ul></div><form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"><input name="name" placeholder="Your Name" required /><input name="email" type="email" placeholder="Your Email" required /><input name="phone" placeholder="Phone Number" /><select name="service"><option>Airbnb Turnover Cleaning</option><option>Deep Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Recurring Cleaning</option></select><textarea name="message" placeholder="Tell us what you need"></textarea><button class="btn btn-primary" type="submit">Send Request</button></form></div></div>
     </section>
   </main>
 
   <footer class="contact">
     <div class="container cta-footer">
-      <div class="footer-logo">Home Comfort Cleaners<br /><small>Premium Cleaning Services</small></div>
+      <div><img src="images/logo.png" alt="Home Comfort Cleaners LLC Logo" class="footer-logo-img" /></div>
       <div><h2>Ready for a Spotless, Stress-Free Space?</h2><p class="booking-note">Let us handle the cleaning so you can focus on what matters most.</p><br /><a href="#booking" class="btn btn-primary" data-page-link="booking">Book Your Cleaning Today</a></div>
-      <div class="footer-info"><div>☎ (904) 936-0157</div><div>✉ info@homecomfortcleaners.com</div><div>📍 Jackconville, Florida</div></div>
+      <div class="footer-info"><div>☎ (555) 123-4567</div><div>✉ info@homecomfortcleaners.com</div><div>📍 Your City, State</div></div>
     </div>
     <div class="copyright">© 2024 Home Comfort Cleaners LLC. All Rights Reserved. &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Terms of Service</div>
   </footer>
 
   <script>
-    // Replace this with your real Squarespace Scheduling / Acuity URL.
-    const YOUR-SQUARE-ID = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
+    // IMPORTANT: Replace this with your real Square Appointments booking link.
+    const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
 
     const pages = document.querySelectorAll(".page");
     const pageLinks = document.querySelectorAll("[data-page-link]");
     const menu = document.getElementById("menu");
     const toggle = document.querySelector(".mobile-toggle");
-    const bookingFrame = document.getElementById("bookingFrame");
-    const externalBookingLink = document.getElementById("externalBookingLink");
+    const squareBookingButton = document.getElementById("squareBookingButton");
+    const squareBookingFrame = document.getElementById("squareBookingFrame");
 
-    
+    if (squareBookingButton) squareBookingButton.href = SQUARE_BOOKING_URL;
+    if (squareBookingFrame) squareBookingFrame.src = SQUARE_BOOKING_URL;
 
     function showPage(pageId) {
       pages.forEach((page) => page.classList.remove("active-page"));
