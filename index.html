@@ -3,901 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Comfort Cleaners LLC</title>
-  <meta name="description" content="Premium cleaning services for homeowners and Airbnb hosts." />
-
+  <title>Home Comfort Cleaners LLC | Premium Cleaning Services</title>
+  <meta name="description" content="Home Comfort Cleaners LLC provides premium Airbnb turnover, deep cleaning, move-in/move-out, and recurring cleaning services." />
   <style>
     :root {
-      --navy: #061523;
-      --navy-2: #081c2d;
-      --gold: #d6a13d;
-      --gold-light: #efc76b;
-      --cream: #f7f0e5;
-      --white: #ffffff;
-      --text: #1c1c1c;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
-      --radius: 16px;
+      --navy: #071522;
+      --navy-2: #0b1e30;
+      --gold: #d6a647;
+      --gold-2: #f1c86a;
+      --cream: #fbf4e8;
+      --text: #f7f3ea;
+      --muted: #c8c1b3;
+      --dark-text: #1f2933;
+      --border: rgba(214, 166, 71, 0.55);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--cream);
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
+      background: var(--navy);
       line-height: 1.6;
     }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.1; margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .gold { color: var(--gold-2); }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-weight: 800; font-size: .78rem; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 5px;
       border: 1px solid var(--gold);
-      border-radius: 4px;
-      padding: 0.85rem 1.45rem;
-      font-family: Arial, sans-serif;
-      font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: #151515;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(214, 161, 61, 0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-    }
-
-    .btn-outline:hover {
       background: var(--gold);
-      color: #151515;
-    }
-
-    .section-kicker {
-      color: var(--gold);
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
+      color: #101820;
       font-weight: 800;
-      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
     }
+    .btn:hover { transform: translateY(-2px); background: var(--gold-2); }
+    .btn.outline { background: transparent; color: var(--gold-2); }
+    .btn.outline:hover { background: rgba(214,166,71,.12); }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.05;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-
-    .header {
+    header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(6, 21, 35, 0.96);
-      border-bottom: 1px solid rgba(214, 161, 61, 0.45);
+      z-index: 50;
+      background: rgba(7,21,34,.94);
+      border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
-
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
       min-height: 92px;
-      gap: 2rem;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-img {
-      height: 78px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.45));
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      list-style: none;
-      color: var(--white);
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .menu a {
-      color: #e8e8e8;
-      position: relative;
-    }
-
-    .menu a:hover,
-    .menu a.active {
-      color: var(--gold);
-    }
-
-    .menu a.active::after,
-    .menu a:hover::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -12px;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      color: var(--white);
-      border: 0;
-      font-size: 2rem;
-      cursor: pointer;
-    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { width: 150px; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: .85rem; font-weight: 800; text-transform: uppercase; }
+    .nav-links a { color: #d8d8d8; }
+    .nav-links a:hover { color: var(--gold-2); }
+    .menu-btn { display: none; background: none; border: 1px solid var(--gold); color: var(--gold); padding: 10px 12px; border-radius: 6px; }
 
     .hero {
-      position: relative;
-      min-height: 690px;
-      background:
-        linear-gradient(90deg, rgba(6, 21, 35, 0.96) 0%, rgba(6, 21, 35, 0.83) 38%, rgba(6, 21, 35, 0.25) 100%),
-        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
-      color: var(--white);
-      border-bottom: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 610px;
-      padding: 5rem 0;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.6rem);
-      line-height: 0.95;
-      margin-bottom: 1.1rem;
-      font-weight: 500;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: #f2efe8;
-      max-width: 530px;
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2.2rem;
-    }
-
-    .trust-row {
+      min-height: 650px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      color: #efe3cf;
-      font-family: Arial, sans-serif;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      font-weight: 800;
-    }
-
-    .trust-item {
-      display: flex;
       align-items: center;
-      gap: 0.45rem;
-      border-right: 1px solid rgba(214, 161, 61, 0.35);
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(7,21,34,.96) 0%, rgba(7,21,34,.78) 44%, rgba(7,21,34,.2) 100%),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80') center/cover;
+      border-bottom: 2px solid var(--gold);
     }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      color: var(--gold);
-      font-size: 1.1rem;
-    }
+    .hero-content { max-width: 650px; padding: 72px 0; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 5.2rem); margin: 16px 0; }
+    .hero p { max-width: 520px; color: #eee6da; font-size: 1.15rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 38px; color: #ddd2bd; font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+    .badge { border-right: 1px solid var(--border); padding-right: 18px; }
+    .badge:last-child { border-right: 0; }
 
     .about {
       background: var(--navy);
-      color: var(--white);
-      padding: 4.5rem 0;
-      border-bottom: 1px solid var(--gold);
+      padding: 34px 0 48px;
+      border-bottom: 1px solid var(--border);
     }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.35fr .8fr; gap: 44px; align-items: center; }
+    .about-img { border: 2px solid var(--gold); box-shadow: var(--shadow); }
+    .about h2 { font-size: clamp(2rem, 3vw, 3rem); margin: 10px 0 12px; }
+    .about p { color: var(--muted); }
+    .script { color: var(--gold); font-family: 'Brush Script MT', cursive; font-size: 2rem; }
+    .features { border-left: 1px solid var(--border); padding-left: 28px; display: grid; gap: 18px; color: #eee; font-weight: 700; }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr 0.75fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-image {
-      border: 2px solid rgba(214, 161, 61, 0.8);
-      box-shadow: var(--shadow);
-    }
-
-    .about p {
-      color: #ddd3c6;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-    }
-
-    .signature {
-      margin-top: 1.2rem;
-      color: var(--gold);
-      font-size: 1.7rem;
-      font-style: italic;
-    }
-
-    .about-list {
-      list-style: none;
-      border-left: 1px solid rgba(214, 161, 61, 0.5);
-      padding-left: 1.8rem;
-      font-family: Arial, sans-serif;
-    }
-
-    .about-list li {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-      color: #eee;
-    }
-
-    .about-list span {
-      color: var(--gold);
-      font-size: 1.25rem;
-    }
-
-    .services {
-      padding: 4.8rem 0;
-      text-align: center;
-      background:
-        linear-gradient(rgba(247, 240, 229, 0.92), rgba(247, 240, 229, 0.92)),
-        radial-gradient(circle at 30% 20%, rgba(214, 161, 61, 0.15), transparent 30%);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 2.3rem;
-      text-align: center;
-    }
-
-    .service-card {
+    .services, .testimonials { background: var(--cream); color: var(--dark-text); padding: 58px 0; }
+    .section-title { text-align: center; margin-bottom: 32px; }
+    .section-title h2 { font-size: clamp(2rem, 3vw, 3rem); }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+    .card {
       overflow: hidden;
-      border-radius: 4px;
-      background: var(--navy);
-      color: var(--white);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-      border: 1px solid rgba(214, 161, 61, 0.4);
-      transition: 0.25s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-card img {
-      height: 145px;
-      object-fit: cover;
-    }
-
-    .service-body {
-      position: relative;
-      padding: 2.5rem 1.2rem 1.7rem;
-    }
-
-    .service-icon {
-      position: absolute;
-      top: -34px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      background: var(--navy);
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-size: 1.8rem;
-    }
-
-    .service-card h3 {
-      font-size: 1rem;
-      line-height: 1.2;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-card p {
-      color: #d9d3c7;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-    }
-
-    .gallery {
-      background: var(--navy);
-      color: var(--white);
-      padding: 4.2rem 0;
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 0.75fr 1.3fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .before-after {
-      display: grid;
-      grid-template-columns: 1fr 60px 1fr;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .ba-card {
-      position: relative;
-      border: 2px solid rgba(214, 161, 61, 0.7);
-      overflow: hidden;
-    }
-
-    .ba-card img {
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .ba-label {
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: var(--navy);
-      color: var(--white);
-      border-right: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-      padding: 0.25rem 0.7rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .arrow {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--gold-light);
-      color: var(--navy);
-      display: grid;
-      place-items: center;
-      font-size: 2.1rem;
-      font-family: Arial, sans-serif;
-      font-weight: 900;
-    }
-
-    .reviews {
-      padding: 4.5rem 0;
-      text-align: center;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.6rem;
-      margin-top: 2rem;
-    }
-
-    .review-card {
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(214, 161, 61, 0.6);
-      border-radius: 8px;
-      padding: 1.6rem;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    }
-
-    .stars {
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.8rem;
-    }
-
-    .review-card p {
-      font-style: italic;
-      font-family: Arial, sans-serif;
-      color: #4d4a45;
-      font-size: 0.94rem;
-      margin-bottom: 1rem;
-    }
-
-    .review-card strong {
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-    }
-
-    .booking {
-      background: var(--navy-2);
-      color: var(--white);
-      padding: 5rem 0;
-    }
-
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .booking-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(214, 161, 61, 0.42);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow);
-    }
-
-    .booking-card iframe {
-      width: 100%;
-      min-height: 700px;
-      border: 0;
-      border-radius: 12px;
-      background: var(--white);
-    }
-
-    .booking-note {
-      color: #d9d3c7;
-      font-family: Arial, sans-serif;
-      margin-top: 1rem;
-      font-size: 0.92rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      margin-top: 1.5rem;
-      font-family: Arial, sans-serif;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.9rem;
-      color: #eee;
-    }
-
-    .contact-list span {
-      color: var(--gold);
-      font-weight: 800;
-      margin-right: 0.5rem;
-    }
-
-    .contact {
-      background: var(--navy);
-      color: var(--white);
-      padding: 3.2rem 0 1.2rem;
-    }
-
-    .cta-footer {
-      display: grid;
-      grid-template-columns: 0.7fr 1.4fr 0.8fr;
-      align-items: center;
-      gap: 2rem;
-      border-bottom: 1px solid rgba(214, 161, 61, 0.45);
-      padding-bottom: 2rem;
-    }
-
-    .footer-logo-img {
-      width: 150px;
-      margin: 0 auto;
-      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.45));
-    }
-
-    .footer-info {
-      font-family: Arial, sans-serif;
-      color: #e6dfd2;
-    }
-
-    .footer-info div {
-      margin-bottom: 0.4rem;
-    }
-
-    .copyright {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      color: #b9b0a2;
-      font-size: 0.78rem;
-      padding-top: 1rem;
-    }
-
-    .page-hero {
-      background: linear-gradient(135deg, var(--navy), var(--navy-2));
-      color: var(--white);
-      padding: 6rem 0 4rem;
-      border-bottom: 2px solid var(--gold);
-      text-align: center;
-    }
-
-    .page {
-      display: none;
-    }
-
-    .page.active-page {
-      display: block;
-    }
-
-    .content-section {
-      padding: 4rem 0;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .form {
-      display: grid;
-      gap: 1rem;
-      font-family: Arial, sans-serif;
-    }
-
-    .form input,
-    .form textarea,
-    .form select {
-      width: 100%;
-      padding: 0.95rem;
-      border: 1px solid rgba(214, 161, 61, 0.45);
       border-radius: 6px;
+      background: var(--navy);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 28px rgba(0,0,0,.18);
+    }
+    .card img { height: 170px; width: 100%; object-fit: cover; }
+    .card-body { padding: 24px 18px; text-align: center; }
+    .card h3 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; }
+    .card p { color: #d9d2c5; font-size: .95rem; }
+
+    .gallery-strip { background: var(--navy); padding: 42px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .gallery-grid { display: grid; grid-template-columns: .8fr 1.2fr 1.2fr; gap: 24px; align-items: center; }
+    .gallery-grid img { height: 180px; width: 100%; object-fit: cover; border: 2px solid var(--gold); }
+
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .quote { background: #fff; border: 1px solid rgba(214,166,71,.55); border-radius: 8px; padding: 26px; text-align: center; box-shadow: 0 10px 22px rgba(0,0,0,.08); }
+    .stars { color: var(--gold); letter-spacing: 4px; font-size: 1.2rem; }
+    .quote p { font-style: italic; color: #4b5563; }
+    .quote strong { display: block; margin-top: 14px; }
+
+    .contact { background: #06101c; padding: 52px 0 22px; border-top: 1px solid var(--border); }
+    .contact-grid { display: grid; grid-template-columns: 220px 1fr 280px; gap: 36px; align-items: center; }
+    .contact img { width: 180px; }
+    .contact h2 { font-size: clamp(2rem, 3vw, 3rem); }
+    .contact p, .contact li { color: var(--muted); }
+    .contact ul { list-style: none; padding: 0; margin: 0; }
+    footer { text-align: center; color: #a8a197; font-size: .82rem; padding-top: 30px; }
+
+    .booking-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      z-index: 100;
+      background: rgba(0,0,0,.72);
+      padding: 20px;
+    }
+    .booking-modal.active { display: grid; }
+    .modal-box {
+      width: min(560px, 100%);
+      background: var(--cream);
+      color: var(--dark-text);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .close-modal { position: absolute; top: 12px; right: 14px; border: 0; background: transparent; font-size: 1.8rem; cursor: pointer; }
+    .modal-box label { display: block; margin-top: 14px; font-weight: 800; }
+    .modal-box input, .modal-box select, .modal-box textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border: 1px solid #d1c3a7;
+      border-radius: 8px;
       font: inherit;
     }
+    .modal-box textarea { min-height: 90px; resize: vertical; }
+    .modal-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 
-    .form textarea {
-      min-height: 140px;
-      resize: vertical;
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 92px; left: 0; right: 0; padding: 18px; background: var(--navy); flex-direction: column; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .menu-btn { display: block; }
+      .about-grid, .gallery-grid, .contact-grid { grid-template-columns: 1fr; }
+      .cards, .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+      .features { border-left: 0; padding-left: 0; }
     }
-
-    @media (max-width: 980px) {
-      .mobile-toggle {
-        display: block;
-      }
-
-      .menu {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 92px;
-        background: var(--navy);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem 4%;
-        border-bottom: 1px solid var(--gold);
-        display: none;
-      }
-
-      .menu.show {
-        display: flex;
-      }
-
-      .about-grid,
-      .gallery-grid,
-      .booking-grid,
-      .cta-footer,
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid,
-      .review-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 620px) {
-      .nav {
-        min-height: 78px;
-      }
-
-      .menu {
-        top: 78px;
-      }
-
-      .logo-img {
-        height: 54px;
-      }
-
-      .services-grid,
-      .review-grid,
-      .trust-row,
-      .before-after {
-        grid-template-columns: 1fr;
-      }
-
-      .arrow {
-        margin: 0 auto;
-        transform: rotate(90deg);
-      }
-
-      .hero {
-        min-height: auto;
-      }
+    @media (max-width: 580px) {
+      .logo img { width: 120px; }
+      .hero { min-height: 560px; }
+      .cards, .testimonial-grid { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .badge { border-right: 0; }
     }
   </style>
 </head>
-
 <body>
-  <header class="header">
+  <header>
     <div class="container nav">
-      <a href="#home" class="logo" data-page-link="home">
-        <img src="images/logo.png" alt="Home Comfort Cleaners LLC Logo" class="logo-img" />
+      <a class="logo" href="#home" aria-label="Home Comfort Cleaners home">
+        <img src="logo.PNG" alt="Home Comfort Cleaners LLC logo" />
       </a>
-
-      <button class="mobile-toggle" aria-label="Open menu">☰</button>
-
-      <ul class="menu" id="menu">
-        <li><a href="#home" class="active" data-page-link="home">Home</a></li>
-        <li><a href="#services" data-page-link="services">Services</a></li>
-        <li><a href="#about" data-page-link="about">About Us</a></li>
-        <li><a href="#why" data-page-link="why">Why Choose Us</a></li>
-        <li><a href="#gallery" data-page-link="gallery">Gallery</a></li>
-        <li><a href="#reviews" data-page-link="reviews">Reviews</a></li>
-        <li><a href="#contact" data-page-link="contact">Contact</a></li>
-      </ul>
-
-      <a class="btn btn-primary" href="#booking" data-page-link="booking">Book Now</a>
+      <button class="menu-btn" id="menuBtn">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a class="btn book-link" href="YOUR_SQUARE_BOOKING_URL_HERE" target="_blank" rel="noopener">Book Now</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section id="home" class="page active-page">
-      <section class="hero">
-        <div class="container hero-content">
-          <div class="section-kicker">Premium Cleaning Services</div>
-          <h1>Experience 5-Star Cleaning for Your <span>Home or Airbnb</span></h1>
-          <p>Professional, reliable, and designed for comfort and perfection.</p>
-          <div class="hero-buttons">
-            <a href="#booking" class="btn btn-primary" data-page-link="booking">📅 Book a Cleaning</a>
-            <a href="#contact" class="btn btn-outline" data-page-link="contact">🛡 Get a Quote</a>
-          </div>
-          <div class="trust-row">
-            <div class="trust-item"><strong>☆</strong> 5-Star Quality</div>
-            <div class="trust-item"><strong>♛</strong> Trusted & Reliable</div>
-            <div class="trust-item"><strong>✓</strong> Satisfaction Guaranteed</div>
-            <div class="trust-item"><strong>🛡</strong> Fully Insured</div>
-          </div>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Premium Cleaning Services</div>
+        <h1>Experience 5-Star Cleaning for Your <span class="gold">Home or Airbnb</span></h1>
+        <p>Professional, reliable cleaning designed for comfort, perfection, and stress-free hosting.</p>
+        <div class="hero-actions">
+          <a class="btn book-link" href="YOUR_SQUARE_BOOKING_URL_HERE" target="_blank" rel="noopener">📅 Book a Cleaning</a>
+          <button class="btn outline" data-open-quote>🛡 Get a Quote</button>
         </div>
-      </section>
-
-      <section class="about">
-        <div class="container about-grid">
-          <img class="about-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Clean luxury kitchen" />
-          <div>
-            <div class="section-kicker">About Home Comfort Cleaners LLC</div>
-            <h2 class="section-title">Where Clean Meets Comfort.</h2>
-            <p>At Home Comfort Cleaners LLC, we provide premium cleaning services tailored for homeowners and Airbnb hosts who expect nothing less than excellence. Our attention to detail ensures every space is spotless, guest-ready, and welcoming.</p>
-            <div class="signature">Clean Spaces. Happy Faces.</div>
-          </div>
-          <ul class="about-list">
-            <li><span>◈</span> Attention to Detail</li>
-            <li><span>◈</span> Reliable & On-Time</li>
-            <li><span>◈</span> Premium Experience</li>
-            <li><span>◈</span> Trusted by Hosts & Homeowners</li>
-          </ul>
+        <div class="badges">
+          <span class="badge">★ 5-Star Quality</span>
+          <span class="badge">Trusted & Reliable</span>
+          <span class="badge">Satisfaction Guaranteed</span>
+          <span class="badge">Fully Insured</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="services">
-        <div class="container">
-          <div class="section-kicker">Our Services</div>
-          <h2 class="section-title">Tailored Cleaning for Every Need</h2>
-          <div class="services-grid">
-            <article class="service-card">
-              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85" alt="Airbnb cleaning" />
-              <div class="service-body"><div class="service-icon">🛏</div><h3>Airbnb Turnover Cleaning</h3><p>Fast, detailed turnovers that keep ratings high and guests happy.</p></div>
-            </article>
-            <article class="service-card">
-              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=85" alt="Deep cleaning bathroom" />
-              <div class="service-body"><div class="service-icon">🧴</div><h3>Deep Cleaning</h3><p>Top-to-bottom deep cleaning for a healthier, fresher living space.</p></div>
-            </article>
-            <article class="service-card">
-              <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=800&q=85" alt="Move in move out cleaning" />
-              <div class="service-body"><div class="service-icon">📦</div><h3>Move-In / Move-Out Cleaning</h3><p>Perfect resets for new beginnings. We handle the details so you do not have to.</p></div>
-            </article>
-            <article class="service-card">
-              <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=85" alt="Recurring cleaning" />
-              <div class="service-body"><div class="service-icon">📅</div><h3>Recurring Cleaning</h3><p>Weekly, bi-weekly, or monthly cleaning to keep your home consistently spotless.</p></div>
-            </article>
-          </div>
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <img class="about-img" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Clean luxury kitchen" />
+        <div>
+          <div class="eyebrow">About Home Comfort Cleaners LLC</div>
+          <h2>Where Clean Meets Comfort.</h2>
+          <p>At Home Comfort Cleaners LLC, we provide premium cleaning services tailored for homeowners and Airbnb hosts who expect nothing less than excellence. Our attention to detail ensures every space is spotless, guest-ready, and welcoming.</p>
+          <div class="script">Clean Spaces. Happy Faces.</div>
         </div>
-      </section>
-
-      <section class="gallery">
-        <div class="container gallery-grid">
-          <div>
-            <div class="section-kicker">Real Results</div>
-            <h2 class="section-title">See the Difference</h2>
-            <p class="booking-note">We take pride in delivering flawless results every time.</p>
-            <br />
-            <a href="#gallery" class="btn btn-outline" data-page-link="gallery">View Gallery</a>
-          </div>
-          <div class="before-after">
-            <div class="ba-card"><span class="ba-label">Before</span><img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=900&q=85" alt="Messy room before cleaning" /></div>
-            <div class="arrow">›</div>
-            <div class="ba-card"><span class="ba-label">After</span><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Clean living room after cleaning" /></div>
-          </div>
+        <div class="features">
+          <span>🛡 Attention to Detail</span>
+          <span>⏱ Reliable & On-Time</span>
+          <span>✨ Premium Experience</span>
+          <span>🏠 Trusted by Hosts & Homeowners</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="reviews">
-        <div class="container">
-          <div class="section-kicker">Client Testimonials</div>
-          <h2 class="section-title">Loved by Homeowners & Hosts</h2>
-          <div class="review-grid">
-            <div class="review-card"><div class="stars">★★★★★</div><p>“Home Comfort Cleaners is absolutely amazing! They are reliable, detail-oriented, and my Airbnb guests always notice how clean everything is.”</p><strong>– Jessica R.<br />Airbnb Host</strong></div>
-            <div class="review-card"><div class="stars">★★★★★</div><p>“Professional, kind, and super thorough. I highly recommend them to anyone looking for premium cleaning services.”</p><strong>– Michael T.<br />Homeowner</strong></div>
-            <div class="review-card"><div class="stars">★★★★★</div><p>“They go above and beyond every time. My property has never looked better!”</p><strong>– Sarah L.<br />Airbnb Host</strong></div>
-          </div>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Our Services</div>
+          <h2>Tailored Cleaning for Every Need</h2>
         </div>
-      </section>
+        <div class="cards">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80" alt="Bedroom cleaning" />
+            <div class="card-body"><h3>Airbnb Turnover Cleaning</h3><p>Fast, detailed turnovers that keep your ratings high and your guests happy.</p></div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80" alt="Bathroom cleaning" />
+            <div class="card-body"><h3>Deep Cleaning</h3><p>Top-to-bottom deep cleaning for a healthier, fresher living space.</p></div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80" alt="Move in cleaning" />
+            <div class="card-body"><h3>Move-In / Move-Out Cleaning</h3><p>Perfect resets for new beginnings. We handle the details so you don’t have to.</p></div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=700&q=80" alt="Towels and clean space" />
+            <div class="card-body"><h3>Recurring Cleaning</h3><p>Weekly, bi-weekly, or monthly cleaning to keep your home consistently spotless.</p></div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="services" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Our Services</div><h1 class="section-title">Cleaning Services Built Around You</h1><p>Choose the service that fits your home, rental, or moving needs.</p></div></div>
-      <div class="services"><div class="container"><div class="services-grid">
-        <article class="service-card"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85" alt="Airbnb cleaning" /><div class="service-body"><div class="service-icon">🛏</div><h3>Airbnb Turnover Cleaning</h3><p>Quick, reliable cleanings between guests, including bathrooms, kitchens, beds, floors, and guest-ready details.</p></div></article>
-        <article class="service-card"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=85" alt="Deep cleaning" /><div class="service-body"><div class="service-icon">🧴</div><h3>Deep Cleaning</h3><p>A detailed reset for kitchens, bathrooms, dusting, baseboards, high-touch areas, and neglected spaces.</p></div></article>
-        <article class="service-card"><img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=800&q=85" alt="Move cleaning" /><div class="service-body"><div class="service-icon">📦</div><h3>Move-In / Move-Out</h3><p>Make your old or new space fresh with detailed empty-home cleaning for every room.</p></div></article>
-        <article class="service-card"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=85" alt="Recurring cleaning" /><div class="service-body"><div class="service-icon">📅</div><h3>Recurring Cleaning</h3><p>Weekly, bi-weekly, and monthly cleaning plans for consistent comfort and peace of mind.</p></div></article>
-      </div></div></div>
+    <section class="gallery-strip" id="gallery">
+      <div class="container gallery-grid">
+        <div>
+          <div class="eyebrow">Real Results</div>
+          <h2>See the Difference</h2>
+          <p>We take pride in delivering flawless results every time.</p>
+          <a class="btn outline" href="#contact">View Gallery</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80" alt="Before cleaning" />
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="After cleaning" />
+      </div>
     </section>
 
-    <section id="about" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">About Us</div><h1 class="section-title">Where Clean Meets Comfort</h1></div></div>
-      <div class="content-section"><div class="container two-column"><img class="about-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Clean interior" /><div><h2 class="section-title">Premium Cleaning With Care</h2><p>Home Comfort Cleaners LLC was created to give homeowners and Airbnb hosts a cleaning experience that feels dependable, polished, and stress-free. We focus on details, consistency, and spaces that feel ready to enjoy.</p><br /><p>Whether you need regular home cleaning, guest-ready turnovers, deep cleaning, or moving support, our team is here to help.</p><div class="signature">Clean Spaces. Happy Faces.</div></div></div></div>
+    <section class="testimonials" id="reviews">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Client Testimonials</div>
+          <h2>Loved by Homeowners & Hosts</h2>
+        </div>
+        <div class="testimonial-grid">
+          <div class="quote"><div class="stars">★★★★★</div><p>“Absolutely amazing, reliable, and detail-oriented. My Airbnb guests always notice how clean everything is.”</p><strong>– Jessica R.</strong><span>Airbnb Host</span></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“Professional, kind, and super thorough. I highly recommend them for premium cleaning services.”</p><strong>– Michael T.</strong><span>Homeowner</span></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“They go above and beyond every time. My property has never looked better.”</p><strong>– Sarah L.</strong><span>Airbnb Host</span></div>
+        </div>
+      </div>
     </section>
 
-    <section id="why" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Why Choose Us</div><h1 class="section-title">Premium Service. Reliable Results.</h1></div></div>
-      <div class="content-section"><div class="container"><div class="review-grid"><div class="review-card"><h3>Detail-Focused</h3><p>We pay attention to the little things that make a space feel truly clean.</p></div><div class="review-card"><h3>On-Time & Reliable</h3><p>Your schedule matters. We show up ready to deliver.</p></div><div class="review-card"><h3>Guest-Ready Standards</h3><p>Perfect for Airbnb hosts who need consistent 5-star presentation.</p></div></div></div></div>
-    </section>
-
-    <section id="gallery" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Gallery</div><h1 class="section-title">Fresh, Polished Spaces</h1></div></div>
-      <div class="content-section"><div class="container"><div class="services-grid"><img class="about-image" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85" alt="Clean room" /><img class="about-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85" alt="Clean kitchen" /><img class="about-image" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=85" alt="Clean bathroom" /><img class="about-image" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85" alt="Clean bedroom" /></div></div></div>
-    </section>
-
-    <section id="reviews" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Reviews</div><h1 class="section-title">What Clients Say</h1></div></div>
-      <section class="reviews"><div class="container"><div class="review-grid"><div class="review-card"><div class="stars">★★★★★</div><p>“Absolutely amazing and very reliable.”</p><strong>Jessica R.</strong></div><div class="review-card"><div class="stars">★★★★★</div><p>“Professional, kind, and super thorough.”</p><strong>Michael T.</strong></div><div class="review-card"><div class="stars">★★★★★</div><p>“My property has never looked better.”</p><strong>Sarah L.</strong></div></div></div></section>
-    </section>
-
-    <section id="booking" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Book Online</div><h1 class="section-title">Schedule Your Cleaning</h1><p>Book your cleaning instantly using our Square booking system.</p></div></div>
-      <section class="booking"><div class="container booking-grid"><div><h2 class="section-title">Book Your Appointment</h2><p class="booking-note">Click below or use the scheduler to book your cleaning through Square.</p><p class="booking-note"><strong>Before publishing:</strong> replace the Square placeholder link in the script with your real Square Appointments link.</p><br /><a id="squareBookingButton" class="btn btn-primary" href="https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start" target="_blank" rel="noopener">Book Now</a></div><div class="booking-card"><iframe id="squareBookingFrame" src="https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start" title="Square online booking"></iframe></div></div></section>
-    </section>
-
-    <section id="contact" class="page">
-      <div class="page-hero"><div class="container"><div class="section-kicker">Contact</div><h1 class="section-title">Get a Quote</h1></div></div>
-      <div class="content-section"><div class="container two-column"><div><h2 class="section-title">Let’s Make Your Space Shine</h2><ul class="contact-list" style="color:#1c1c1c"><li><span>Phone:</span> (555) 123-4567</li><li><span>Email:</span> info@homecomfortcleaners.com</li><li><span>Location:</span> Your City, State</li></ul></div><form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"><input name="name" placeholder="Your Name" required /><input name="email" type="email" placeholder="Your Email" required /><input name="phone" placeholder="Phone Number" /><select name="service"><option>Airbnb Turnover Cleaning</option><option>Deep Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Recurring Cleaning</option></select><textarea name="message" placeholder="Tell us what you need"></textarea><button class="btn btn-primary" type="submit">Send Request</button></form></div></div>
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <img src="logo.PNG" alt="Home Comfort Cleaners LLC logo" />
+        <div>
+          <h2>Ready for a Spotless, Stress-Free Space?</h2>
+          <p>Let us handle the cleaning so you can focus on what matters most.</p>
+          <a class="btn book-link" href="YOUR_SQUARE_BOOKING_URL_HERE" target="_blank" rel="noopener">📅 Book Your Cleaning Today</a>
+        </div>
+        <ul>
+          <li>📞 (904) 936-0157</li>
+          <li>✉️ info@homecomfortcleaners.com</li>
+          <li>📍 Jacksonville, Florida</li>
+        </ul>
+      </div>
+      <footer>© <span id="year"></span> Home Comfort Cleaners LLC. All Rights Reserved.</footer>
     </section>
   </main>
 
-  <footer class="contact">
-    <div class="container cta-footer">
-      <div><img src="images/logo.png" alt="Home Comfort Cleaners LLC Logo" class="footer-logo-img" /></div>
-      <div><h2>Ready for a Spotless, Stress-Free Space?</h2><p class="booking-note">Let us handle the cleaning so you can focus on what matters most.</p><br /><a href="#booking" class="btn btn-primary" data-page-link="booking">Book Your Cleaning Today</a></div>
-      <div class="footer-info"><div>☎ (555) 123-4567</div><div>✉ info@homecomfortcleaners.com</div><div>📍 Your City, State</div></div>
+  <div class="booking-modal" id="quoteModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+      <h2>Request a Quote</h2>
+      <p>Send us a few details. Replace the email in the JavaScript with your business email.</p>
+      <form id="quoteForm">
+        <label>Name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>Phone <input name="phone" type="tel" /></label>
+        <label>Service
+          <select name="service">
+            <option>Airbnb Turnover Cleaning</option>
+            <option>Deep Cleaning</option>
+            <option>Move-In / Move-Out Cleaning</option>
+            <option>Recurring Cleaning</option>
+          </select>
+        </label>
+        <label>Details <textarea name="details" placeholder="Tell us about the property, size, timing, and any special requests."></textarea></label>
+        <div class="modal-actions">
+          <button class="btn" type="submit">Send Quote Request</button>
+          <a class="btn outline book-link" href="YOUR_SQUARE_BOOKING_URL_HERE" target="_blank" rel="noopener">Book Through Square</a>
+        </div>
+      </form>
     </div>
-    <div class="copyright">© 2024 Home Comfort Cleaners LLC. All Rights Reserved. &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Terms of Service</div>
-  </footer>
+  </div>
 
   <script>
-    // Square Appointments booking link
-    const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start";
+    const SQUARE_BOOKING_URL = 'https://app.squareup.com/appointments/book/w3ldekbvkyfd5s/LNGC4CRN193ZF/start';
+    const BUSINESS_EMAIL = 'info@homecomfortcleaners.com';
 
-    const pages = document.querySelectorAll(".page");
-    const pageLinks = document.querySelectorAll("[data-page-link]");
-    const menu = document.getElementById("menu");
-    const toggle = document.querySelector(".mobile-toggle");
-    const squareBookingButton = document.getElementById("squareBookingButton");
-    const squareBookingFrame = document.getElementById("squareBookingFrame");
-
-    if (squareBookingButton) squareBookingButton.href = SQUARE_BOOKING_URL;
-    if (squareBookingFrame) squareBookingFrame.src = SQUARE_BOOKING_URL;
-
-    function showPage(pageId) {
-      const cleanPageId = pageId.replace("#", "") || "home";
-      const targetPage = document.getElementById(cleanPageId) || document.getElementById("home");
-
-      pages.forEach((page) => {
-        page.classList.remove("active-page");
+    document.querySelectorAll('.book-link').forEach(link => {
+      link.href = SQUARE_BOOKING_URL;
+      link.addEventListener('click', (event) => {
+        if (SQUARE_BOOKING_URL.includes('YOUR_SQUARE')) {
+          event.preventDefault();
+          alert('Add your Square booking URL in the code first. Search for YOUR_SQUARE_BOOKING_URL_HERE and replace it.');
+        }
       });
+    });
 
-      targetPage.classList.add("active-page");
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      pageLinks.forEach((link) => {
-        link.classList.toggle("active", link.dataset.pageLink === cleanPageId);
-      });
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-      if (menu) menu.classList.remove("show");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    const modal = document.getElementById('quoteModal');
+    document.querySelectorAll('[data-open-quote]').forEach(btn => {
+      btn.addEventListener('click', () => modal.classList.add('active'));
+    });
+    document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
 
-    // Makes every navbar, hero, footer, and CTA button with data-page-link switch pages.
-    document.addEventListener("click", function (event) {
-      const link = event.target.closest("[data-page-link]");
-
-      if (!link) return;
-
+    document.getElementById('quoteForm').addEventListener('submit', event => {
       event.preventDefault();
-      const pageId = link.dataset.pageLink;
-      history.pushState(null, "", "#" + pageId);
-      showPage(pageId);
-    });
-
-    if (toggle) {
-      toggle.addEventListener("click", function () {
-        if (menu) menu.classList.toggle("show");
-      });
-    }
-
-    window.addEventListener("popstate", function () {
-      showPage(location.hash || "#home");
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      showPage(location.hash || "#home");
+      const data = new FormData(event.target);
+      const subject = encodeURIComponent('New Cleaning Quote Request');
+      const body = encodeURIComponent(
+        `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nPhone: ${data.get('phone')}\nService: ${data.get('service')}\nDetails: ${data.get('details')}`
+      );
+      window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
     });
   </script>
 </body>
