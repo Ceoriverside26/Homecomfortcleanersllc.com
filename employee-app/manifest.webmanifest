@@ -1,0 +1,13 @@
+{
+  "name": "Home Comfort Cleaners Employee App",
+  "short_name": "HCC Employee",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f8fc",
+  "theme_color": "#1667c5",
+  "description": "Employee portal for Home Comfort Cleaners LLC",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
