@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f8fa"><title>Onboarding | Home Comfort Cleaners</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--bg:#f6f7f9;--line:#e5e7eb;--text:#1f2937;--muted:#6b7280;--navy:#172033;--green:#139a69}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}button,a{font:inherit}.main{max-width:900px;margin:auto;padding:20px 16px 80px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.back,.langBtn{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 13px;text-decoration:none;color:var(--text);font-weight:750}.lang{display:flex;gap:8px}.langBtn.active{background:var(--navy);color:#fff}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:14px;box-shadow:0 8px 22px #1a24380d}.hero{background:var(--navy);color:#fff}.hero p{color:#d8deea}.muted{color:var(--muted)}h1{margin:10px 0}h2{margin:0 0 10px}.step{display:flex;gap:12px;margin:12px 0;align-items:flex-start}.num{min-width:30px;height:30px;border-radius:50%;background:#e9f8f1;color:var(--green);display:grid;place-items:center;font-weight:900}.check{display:flex;gap:10px;align-items:flex-start;margin:11px 0}.check input{margin-top:4px;transform:scale(1.25)}.warn{border-left:5px solid #eab308}.complete{width:100%;border:0;border-radius:12px;padding:14px;background:var(--green);color:#fff;font-weight:900;margin-top:14px}.status{text-align:center;font-weight:850;margin-top:12px}.hidden{display:none!important}ul{padding-left:20px;line-height:1.55}@media(max-width:600px){.top{align-items:flex-start;flex-direction:column}.lang{width:100%}.langBtn{flex:1}}
+</style></head>
+<body><main class="main">
+<div class="top"><a class="back" href="./">← Employee App</a><div class="lang"><button class="langBtn active" data-lang="en">English</button><button class="langBtn" data-lang="es">Español</button></div></div>
+
+<div class="en">
+<section class="card hero"><div>HOME COMFORT CLEANERS LLC</div><h1>Employee Onboarding & SOPs</h1><p>Complete this training before working independently. Your manager may require additional employment forms or hands-on training.</p></section>
+<section class="card"><h2>New Employee Checklist</h2>
+<div class="step"><span class="num">1</span><div><b>Employment setup</b><div class="muted">Complete the hiring, payroll, tax and work-authorization documents management provides.</div></div></div>
+<div class="step"><span class="num">2</span><div><b>Policies</b><div class="muted">Review attendance, call-outs, dress, conduct, privacy and customer-property rules.</div></div></div>
+<div class="step"><span class="num">3</span><div><b>Safety</b><div class="muted">Review PPE, chemicals, equipment, injuries, incidents and emergency procedures.</div></div></div>
+<div class="step"><span class="num">4</span><div><b>App training</b><div class="muted">Know how to view assigned jobs, clock in/out, upload photos, report problems and complete jobs.</div></div></div>
+</section>
+<section class="card warn"><h2>Safety Rules</h2><ul><li>Never mix cleaning chemicals. Follow labels and SDS instructions.</li><li>Use required PPE and ventilation.</li><li>Stop work and contact management if a condition is unsafe.</li><li>Do not handle needles, biohazards, exposed electrical hazards or aggressive animals.</li><li>Report injuries, damage and incidents immediately. Never conceal damage.</li></ul></section>
+<section class="card"><h2>Cleaning SOP</h2><ul><li>Review the assigned job, address, scope, access notes, supplies and PPE before arrival.</li><li>Clock in according to company procedure and verify the correct property.</li><li>Document pre-existing concerns and take required before photos.</li><li>Clean top-to-bottom and surfaces before floors. Use separate bathroom, kitchen and general-area tools to reduce cross-contamination.</li><li>Kitchen: approved counters, sink/fixtures, included appliance surfaces, trash and floors. Use only products approved for specialty surfaces.</li><li>Bathroom: required PPE; toilet, sink, fixtures, tub/shower, touchpoints, trash and floor last.</li><li>Bedrooms/living areas: dust assigned surfaces, clean touchpoints, vacuum and clean floors using the approved method.</li><li>Deep cleans, move-in/out, apartment turns and commercial jobs: follow the exact assigned scope and site restrictions.</li><li>Final walkthrough, required after photos, report unfinished items, then mark the job complete.</li></ul></section>
+<section class="card"><h2>Privacy & Conduct</h2><ul><li>Never share customer addresses, access codes, keys, alarm information, photos or private notes.</li><li>Do not bring unauthorized people to a customer's property.</li><li>Never take, borrow, consume or remove customer property.</li><li>Only take photos required for job documentation.</li><li>Never clock in or out for another employee.</li></ul></section>
+<section class="card"><h2>Employee Acknowledgment</h2>
+<label class="check"><input class="ack" type="checkbox"><span>I reviewed the onboarding information and employee rules.</span></label>
+<label class="check"><input class="ack" type="checkbox"><span>I reviewed the safety and chemical-handling requirements.</span></label>
+<label class="check"><input class="ack" type="checkbox"><span>I reviewed the Cleaning SOP and app workflow.</span></label>
+<label class="check"><input class="ack" type="checkbox"><span>I understand I must report safety issues, damage, injuries and customer concerns promptly.</span></label>
+<button class="complete" onclick="finish('en')">Complete Onboarding</button><div class="status" id="statusEn"></div></section>
+</div>
+
+<div class="es hidden">
+<section class="card hero"><div>HOME COMFORT CLEANERS LLC</div><h1>Incorporación y SOP del Empleado</h1><p>Complete esta capacitación antes de trabajar de forma independiente. La gerencia puede requerir formularios adicionales o capacitación práctica.</p></section>
+<section class="card"><h2>Lista de Incorporación</h2>
+<div class="step"><span class="num">1</span><div><b>Documentos de empleo</b><div class="muted">Complete los documentos de contratación, nómina, impuestos y autorización de trabajo proporcionados por la gerencia.</div></div></div>
+<div class="step"><span class="num">2</span><div><b>Políticas</b><div class="muted">Revise asistencia, ausencias, vestimenta, conducta, privacidad y propiedad del cliente.</div></div></div>
+<div class="step"><span class="num">3</span><div><b>Seguridad</b><div class="muted">Revise EPP, químicos, equipos, lesiones, incidentes y procedimientos de emergencia.</div></div></div>
+<div class="step"><span class="num">4</span><div><b>Capacitación de la aplicación</b><div class="muted">Aprenda a ver trabajos, registrar entrada/salida, subir fotos, reportar problemas y completar trabajos.</div></div></div>
+</section>
+<section class="card warn"><h2>Reglas de Seguridad</h2><ul><li>Nunca mezcle productos químicos. Siga las etiquetas y las instrucciones de SDS.</li><li>Use el EPP y la ventilación requeridos.</li><li>Detenga el trabajo y contacte a la gerencia si una condición no es segura.</li><li>No manipule agujas, riesgos biológicos, peligros eléctricos expuestos ni animales agresivos.</li><li>Reporte inmediatamente lesiones, daños e incidentes. Nunca oculte daños.</li></ul></section>
+<section class="card"><h2>SOP de Limpieza</h2><ul><li>Revise trabajo, dirección, alcance, acceso, suministros y EPP antes de llegar.</li><li>Registre su entrada según el procedimiento y confirme la propiedad correcta.</li><li>Documente problemas preexistentes y tome las fotos iniciales requeridas.</li><li>Limpie de arriba hacia abajo y las superficies antes de los pisos. Separe herramientas de baños, cocinas y áreas generales.</li><li>Cocina: encimeras aprobadas, fregadero/grifería, superficies de electrodomésticos incluidas, basura y pisos. Use productos aprobados para superficies especiales.</li><li>Baño: EPP requerido; inodoro, lavabo, accesorios, bañera/ducha, puntos de contacto, basura y piso al final.</li><li>Dormitorios/áreas comunes: quite polvo, limpie puntos de contacto, aspire y limpie pisos con el método aprobado.</li><li>Limpieza profunda, mudanzas, cambios de apartamento y comercial: siga exactamente el alcance asignado y las restricciones del sitio.</li><li>Haga inspección final, fotos finales requeridas, reporte lo incompleto y marque el trabajo terminado.</li></ul></section>
+<section class="card"><h2>Privacidad y Conducta</h2><ul><li>Nunca comparta direcciones, códigos, llaves, alarmas, fotos ni notas privadas de clientes.</li><li>No lleve personas no autorizadas a la propiedad del cliente.</li><li>Nunca tome, pida prestado, consuma ni retire propiedad del cliente.</li><li>Solo tome fotos requeridas para documentar el trabajo.</li><li>Nunca registre entrada o salida por otro empleado.</li></ul></section>
+<section class="card"><h2>Reconocimiento del Empleado</h2>
+<label class="check"><input class="ackEs" type="checkbox"><span>Revisé la información de incorporación y las reglas del empleado.</span></label>
+<label class="check"><input class="ackEs" type="checkbox"><span>Revisé los requisitos de seguridad y manejo de químicos.</span></label>
+<label class="check"><input class="ackEs" type="checkbox"><span>Revisé el SOP de limpieza y el flujo de la aplicación.</span></label>
+<label class="check"><input class="ackEs" type="checkbox"><span>Entiendo que debo reportar rápidamente problemas de seguridad, daños, lesiones y preocupaciones del cliente.</span></label>
+<button class="complete" onclick="finish('es')">Completar Incorporación</button><div class="status" id="statusEs"></div></section>
+</div>
+</main>
+<script>
+const buttons=[...document.querySelectorAll('.langBtn')];
+buttons.forEach(b=>b.onclick=()=>{const l=b.dataset.lang;buttons.forEach(x=>x.classList.toggle('active',x===b));document.querySelector('.en').classList.toggle('hidden',l!=='en');document.querySelector('.es').classList.toggle('hidden',l!=='es');document.documentElement.lang=l});
+function finish(lang){const cls=lang==='en'?'.ack':'.ackEs',all=[...document.querySelectorAll(cls)];if(!all.every(x=>x.checked)){alert(lang==='en'?'Please check every acknowledgment before completing onboarding.':'Marque cada reconocimiento antes de completar la incorporación.');return}localStorage.setItem('hcc_onboarding_complete','true');localStorage.setItem('hcc_onboarding_language',lang);localStorage.setItem('hcc_onboarding_completed_at',new Date().toISOString());const el=document.getElementById(lang==='en'?'statusEn':'statusEs');el.textContent=lang==='en'?'✓ Onboarding completed on this device. Management approval may still be required.':'✓ Incorporación completada en este dispositivo. La aprobación de la gerencia todavía puede ser requerida.'}
+if(localStorage.getItem('hcc_onboarding_complete')==='true'){const lang=localStorage.getItem('hcc_onboarding_language')||'en',el=document.getElementById(lang==='es'?'statusEs':'statusEn');el.textContent=lang==='es'?'✓ Incorporación completada en este dispositivo.':'✓ Onboarding completed on this device.'}
+</script></body></html>
