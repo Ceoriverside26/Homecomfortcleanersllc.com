@@ -1,4 +1,4 @@
-const CACHE='hcc-employee-v15';
+const CACHE='hcc-employee-v16';
 const ASSETS=['./','./index.html','./management.html','./jobs-management.html','./team-lead.html','./onboarding.html','./payroll.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))]))});
